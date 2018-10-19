@@ -1,11 +1,10 @@
 {
   "name": "language-1802",
   "version": "0.0.0",
-  "description": "Adds syntax highlighting to RCA 1802 files in Atom.",
+  "description": "Adds language support for RCA 1802 assembly.",
   "keywords": [
     "1802",
     "assembly",
-    "COSMAC ELF",
     "grammar",
     "language"
   ],
