@@ -1,7 +1,7 @@
 # Syntax highlighting for Crossware 6809 assembler toolchain
 
 scopeName: 'source.a18'
-name: 'A18 AssemblerMUMU (1802)'
+name: 'A18 Assembler (1802)'
 fileTypes: [
   's'
   'S'
@@ -72,20 +72,14 @@ repository:
   # assembler directives
   directives:
     patterns: [
-      # source.a18 pseudo opcodes
+      # a18 pseudo opcodes
       {
-        # match: '(\\.)\\b(?i:blk|byte|db|cpu 180[25]|ejct|end|equ|if|else|endi|incl|load|org|page|set|text|titl|word|dw|call|retn)\\b'
         match: '\\b(?i:blk|byte|db|ejct|end|equ|if|else|endi|incl|load|org|page|set|text|titl|word|dw|call|retn)\\b'
         name: 'support.function.pseudo.a18'
       }
-      # # address sizes, macpack packages
-      # {
-      #   match:  '\\b(?i:direct|zeropage|zp|absolute|abs|near|far|long|dword|atari|cbm|cpu|generic|longbranch)\\b'
-      #   name:   'constant.language.source.a18'
-      # }
       # Operators
       {
-        match: '(?i:\\*|\\/|\\-|\\+|=|<=|>=|<|>|><|<>|mod|shl|shr)'
+        match: '(?i:\\*|\\/|\\-|\\+|=|<=|>=|<|>|><|<>|mod|shl|shr|\\$)'
         name: 'keyword.operator.a18'
       }
       # Operators II
