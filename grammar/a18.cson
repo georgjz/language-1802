@@ -7,7 +7,7 @@ fileTypes: [
   's'
 ]
 patterns: [
-  { include: 'source.1802' }  # basic opcodes
+  # { include: 'source.1802-opcodes' }  # basic opcodes
   { include: '#comments' }  # comments
   { include: '#symbols' }   # symbols, constants, numbers
   { include: '#directives' } # cc65 assembler directives
@@ -39,7 +39,7 @@ repository:
         endCaptures:
           0:
             name: 'punctuation.definition.string.end.a18'
-        name: 'string.quoted.double.a18'
+        name: 'string.quoted.double.source.a18'
       }
       # absolut addressing/numbers
       {
@@ -54,7 +54,7 @@ repository:
       # hex, suffixed with h(h)
       # {
       #   match: '-?\\b([a-fA-F0-9]+)h\\b'
-      #   name: 'constant.numeric.hex.a18'
+      #   name: 'constant.numeric.hex.source.a18'
       # }
       # binary
       {
@@ -71,7 +71,7 @@ repository:
   # assembler directives
   directives:
     patterns: [
-      # a18 pseudo opcodes
+      # source.a18 pseudo opcodes
       {
         match:  '(\\.)\\b(?i:blk|byte|db|cpu 180[25]|ejct|end|equ|if|else|endi|incl|load|org|page|set|text|titl|word|dw|call|retn)\\b'
         name:   'support.function.pseudo.a18'
@@ -79,7 +79,7 @@ repository:
       # # address sizes, macpack packages
       # {
       #   match:  '\\b(?i:direct|zeropage|zp|absolute|abs|near|far|long|dword|atari|cbm|cpu|generic|longbranch)\\b'
-      #   name:   'constant.language.a18'
+      #   name:   'constant.language.source.a18'
       # }
       # Operators
       {

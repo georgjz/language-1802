@@ -15,8 +15,6 @@
     "atom": "*",
     "node": "*"
   },
-  "dependencies": {
-  },
   "bugs": {
     "url": "https://github.com/georgjz/language-1802.git/issues"
   }
