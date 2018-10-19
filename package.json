@@ -1,6 +1,6 @@
 {
     "name": "language-1802",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "description": "Adds language support for RCA 1802 assembly.",
     "keywords": [
         "1802",
