@@ -1,19 +1,20 @@
-# Syntax Highlighting for the cc65 toolchain directives
+# Syntax highlighting for Crossware 6809 assembler toolchain
 
 scopeName: 'source.a18'
-name: 'A18 Assembler (1802)'      # Name shown in Atom Editor grammar selection
-# File extensions associated with this grammar
+name: 'A18 AssemblerMUMU (1802)'
 fileTypes: [
   's'
+  'S'
+  'asm'
 ]
 patterns: [
-  # { include: 'source.1802-opcodes' }  # basic opcodes
-  { include: '#comments' }  # comments
-  { include: '#symbols' }   # symbols, constants, numbers
-  { include: '#directives' } # cc65 assembler directives
+  { include: 'source.1802-opcodes' } # 1802 opcodes
+  { include: '#comments' } # comments
+  { include: '#symbols' } # symbols
+  { include: '#directives' } # Assembler directives for crossware6809
 ]
 
-# Repository starts here ------------------------------------------------------
+# start of repository ----------------------------------------------------------
 repository:
 
   # comments
@@ -21,8 +22,8 @@ repository:
     patterns: [
       # semicolon comments
       {
-        match:  '\\.\\..*$'
-        name:   'comment.line.semicolon.a18'
+        match: ';.*$'
+        name: 'comment.line.semicolon.a18'
       }
     ]
 
@@ -52,10 +53,10 @@ repository:
         name: 'constant.numeric.hex.a18'
       }
       # hex, suffixed with h(h)
-      # {
-      #   match: '-?\\b([a-fA-F0-9]+)h\\b'
-      #   name: 'constant.numeric.hex.source.a18'
-      # }
+      {
+        match: '-?\\b([a-fA-F0-9]+)[hH]\\b'
+        name: 'constant.numeric.hex.source.a18'
+      }
       # binary
       {
         match: '%[01]+'
@@ -73,8 +74,9 @@ repository:
     patterns: [
       # source.a18 pseudo opcodes
       {
-        match:  '(\\.)\\b(?i:blk|byte|db|cpu 180[25]|ejct|end|equ|if|else|endi|incl|load|org|page|set|text|titl|word|dw|call|retn)\\b'
-        name:   'support.function.pseudo.a18'
+        # match: '(\\.)\\b(?i:blk|byte|db|cpu 180[25]|ejct|end|equ|if|else|endi|incl|load|org|page|set|text|titl|word|dw|call|retn)\\b'
+        match: '\\b(?i:blk|byte|db|ejct|end|equ|if|else|endi|incl|load|org|page|set|text|titl|word|dw|call|retn)\\b'
+        name: 'support.function.pseudo.a18'
       }
       # # address sizes, macpack packages
       # {
@@ -83,12 +85,12 @@ repository:
       # }
       # Operators
       {
-        match:  '(?i:\\*|\\/|\\-|\\+|=|<=|>=|<|>|><|<>|mod|shl|shr)'
-        name:   'keyword.operator.a18'
+        match: '(?i:\\*|\\/|\\-|\\+|=|<=|>=|<|>|><|<>|mod|shl|shr)'
+        name: 'keyword.operator.a18'
       }
       # Operators II
       {
-        match:  '(\\.)\\b(?i:and|not|or|xor|lt|le|eq|ge|gt|ne)\\b'
-        name:   'keyword.function.pseudo.a18'
+        match: '(\\.)\\b(?i:and|not|or|xor|lt|le|eq|ge|gt|ne)\\b'
+        name: 'support.function.pseudo.a18'
       }
     ]
