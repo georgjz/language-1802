@@ -1,20 +1,20 @@
 {
-  "name": "language-1802",
-  "version": "0.0.0",
-  "description": "Adds language support for RCA 1802 assembly.",
-  "keywords": [
-    "1802",
-    "assembly",
-    "grammar",
-    "language"
-  ],
-  "repository": "https://github.com/georgjz/language-1802.git",
-  "license": "MIT",
-  "engines": {
-    "atom": "*",
-    "node": "*"
-  },
-  "bugs": {
-    "url": "https://github.com/georgjz/language-1802.git/issues"
-  }
+    "name": "language-1802",
+    "version": "0.0.0",
+    "description": "Adds language support for RCA 1802 assembly.",
+    "keywords": [
+        "1802",
+        "assembly",
+        "grammar",
+        "language"
+    ],
+    "repository": "https://github.com/georgjz/language-1802.git",
+    "license": "MIT",
+    "engines": {
+        "atom": "*",
+        "node": "*"
+    },
+    "bugs": {
+        "url": "https://github.com/georgjz/language-1802.git/issues"
+    }
 }
