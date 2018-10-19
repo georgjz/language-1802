@@ -1,0 +1,23 @@
+{
+  "name": "language-1802",
+  "version": "0.0.0",
+  "description": "Adds syntax highlighting to RCA 1802 files in Atom.",
+  "keywords": [
+    "1802",
+    "assembly",
+    "COSMAC ELF",
+    "grammar",
+    "language"
+  ],
+  "repository": "https://github.com/georgjz/language-1802.git",
+  "license": "MIT",
+  "engines": {
+    "atom": "*",
+    "node": "*"
+  },
+  "dependencies": {
+  },
+  "bugs": {
+    "url": "https://github.com/georgjz/language-1802.git/issues"
+  }
+}
