@@ -1,0 +1,25 @@
+# Syntax Highlighting for the basic instruction set of the 1802 microprocessor.
+# This file only contains rules for 1802 mnemonics. The rules here are used by
+# other grammars only that add rules for comments, symbols, etc.
+
+scopeName: 'source.1802-opcodes'
+
+patterns: [
+  # The basic 6502 instruction set
+  {
+    include: '#mnemonics-1802'
+  }
+]
+
+# Respository starts here -----------------------------------------------------
+repository:
+
+  # basic 1802 instruction set
+  'mnemonics-1802':
+    patterns: [
+      # mnemonics
+      {
+        match:  '\\b(?i:mnem|adci?|add|adi|and|ani|bn?[1-4]|b[dn]f|bnq|bnz|b[qrz]|dec|dis|ghi|glo|idl|inc|inp|irx|lbdf|lbn?[fqz]|lbr|ld[ainx]|ldxa|lsdf|lsie|lskp|lsn?[fqz]|mark|nop|ori?|out|phi|plo|req|ret|sav|sdb?i?|se[pqx]|sh[lr]c?|skp|smb?i?|str|stxd|xor|xri)\\b'
+        name:   'keyword.mnemonic.1802.1802-opcodes'
+      }
+    ]

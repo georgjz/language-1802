@@ -1,0 +1,94 @@
+# Syntax Highlighting for the cc65 toolchain directives
+
+scopeName: 'source.a18'
+name: 'A18 Assembler (1802)'      # Name shown in Atom Editor grammar selection
+# File extensions associated with this grammar
+fileTypes: [
+  's'
+]
+patterns: [
+  { include: 'source.1802' }  # basic opcodes
+  { include: '#comments' }  # comments
+  { include: '#symbols' }   # symbols, constants, numbers
+  { include: '#directives' } # cc65 assembler directives
+]
+
+# Repository starts here ------------------------------------------------------
+repository:
+
+  # comments
+  comments:
+    patterns: [
+      # semicolon comments
+      {
+        match:  '\\.\\..*$'
+        name:   'comment.line.semicolon.a18'
+      }
+    ]
+
+  # symbols
+  symbols:
+    patterns: [
+      # strings
+      {
+        begin: '"'
+        beginCaptures:
+          0:
+            name: 'punctuation.definition.string.begin.a18'
+        end: '"'
+        endCaptures:
+          0:
+            name: 'punctuation.definition.string.end.a18'
+        name: 'string.quoted.double.a18'
+      }
+      # absolut addressing/numbers
+      {
+        match: '\\#(\'.\'|[^\\s\']+)'
+        name: 'constant.numeric.hex.a18'
+      }
+      # hex, prefixed with dollar sign($)
+      {
+        match: '-?\\$\\b[a-fA-F0-9]+\\b'
+        name: 'constant.numeric.hex.a18'
+      }
+      # hex, suffixed with h(h)
+      # {
+      #   match: '-?\\b([a-fA-F0-9]+)h\\b'
+      #   name: 'constant.numeric.hex.a18'
+      # }
+      # binary
+      {
+        match: '%[01]+'
+        name: 'constant.numeric.binary.a18'
+      }
+      # decimal
+      {
+        match: '\\b([0-9]+)\\b'
+        name: 'constant.numeric.decimal.a18'
+      }
+    ]
+
+  # assembler directives
+  directives:
+    patterns: [
+      # a18 pseudo opcodes
+      {
+        match:  '(\\.)\\b(?i:blk|byte|db|cpu 180[25]|ejct|end|equ|if|else|endi|incl|load|org|page|set|text|titl|word|dw|call|retn)\\b'
+        name:   'support.function.pseudo.a18'
+      }
+      # # address sizes, macpack packages
+      # {
+      #   match:  '\\b(?i:direct|zeropage|zp|absolute|abs|near|far|long|dword|atari|cbm|cpu|generic|longbranch)\\b'
+      #   name:   'constant.language.a18'
+      # }
+      # Operators
+      {
+        match:  '(?i:\\*|\\/|\\-|\\+|=|<=|>=|<|>|><|<>|mod|shl|shr)'
+        name:   'keyword.operator.a18'
+      }
+      # Operators II
+      {
+        match:  '(\\.)\\b(?i:and|not|or|xor|lt|le|eq|ge|gt|ne)\\b'
+        name:   'keyword.function.pseudo.a18'
+      }
+    ]
